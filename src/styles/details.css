@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: auto;
+}
+img{
+    width: 150px;;
+    height: 150px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 2rem; */
+    /* border: 1px dashed rgb(185, 179, 182); */
+    padding: 1rem;
+    /* border-radius: 0.5rem; */
+    /* box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143); */
+}
+#submitRequest {
+    /* margin: 1rem 0 2rem 2rem; */
+    margin: 1rem 0 2rem 1rem;
+    padding: 0.5rem;
+    background-color: rgb(62, 60, 63);
+    color: lightgoldenrodyellow;
+    font-size: 1rem;
+}
+
+.request__delete {  
+
+    background-color: rgb(177, 19, 19);
+    color: lightgoldenrodyellow;
+}
+
+ul {
+    margin: 1rem 0 5rem 0rem;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(233, 227, 230);
+    margin: 0rem 2rem 0rem -1.3rem;
+    padding: 1rem 0rem;
+} 
+li:nth-child(even){
+    background-color:white;
+   }
+li:nth-child(odd){
+    background-color: lightgray;
+   }
