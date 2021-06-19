@@ -1,5 +1,5 @@
 const applicationState = {
-    requests:[]
+    requests: []
 }
 
 const API = "http://localhost:8088"
@@ -49,5 +49,5 @@ export const deleteRequest = (id) => {
 }
 
 export const getRequests = () => {
-    return applicationState.requests.map(request => ({...request}))
+    return applicationState.requests.map(request => ({ ...request }))
 }

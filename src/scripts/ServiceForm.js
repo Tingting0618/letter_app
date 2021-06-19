@@ -1,15 +1,14 @@
 import { sendRequest } from "./dataAccess.js"
-// <input type="text" name="authorName" class="input" />
 
 export const ServiceForm = () => {
     let html = `
         <div class="field">
             <label class="label" for="authorName">Author</label>
             <select id="authorSelection"  class="select">
-              <option value="amy">Amy</option>
-              <option value="emmy">Emmy</option>
-              <option value="bob">Bob</option>
-              <option value="albert">Albert</option>
+              <option value="Amy@gmail.com" > Amy</option>
+              <option value="Emmy@gmail.com" > Emmy</option>
+              <option value="Bob@gmail.com"> Bob </option>
+              <option value="Albert@gmail.com" > Albert </option>
             </select>
         </div>
 
@@ -20,26 +19,23 @@ export const ServiceForm = () => {
         </div>
 
         <div class="field">
-            <label class="label" for="topic">Topics</label>
-            <label><input type="radio" name="topic_input" class="input" id="business"/>Business</label>
-            <label><input type="radio" name="topic_input" class="input" id="friendly"/>Friendly</label>
-            <label><input type="radio" name="topic_input" class="input" id="family"/>Family</label>
-            <label><input type="radio" name="topic_input" class="input" id="congratulations"/>Congratulations</label>
+        <label class="label" for="topic">Topics</label>
+        <div class="field_topic">
+            <label><input type="radio" name="topic_input" class="input" id="Business"/>Business</label>
+            <label><input type="radio" name="topic_input" class="input" id="Friendly"/>Friendly</label>
+            <label><input type="radio" name="topic_input" class="input" id="Family"/>Family</label>
+            <label><input type="radio" name="topic_input" class="input" id="Congratulations"/>Congratulations</label>
+        </div>
         </div>
 
         <div class="field">
             <label class="label" for="recipient">Recipient</label>
             <select id="recipientSelection"  class="select">
-              <option value="amy">Amy</option>
-              <option value="emmy">Emmy</option>
-              <option value="bob">Bob</option>
-              <option value="albert">Albert</option>
+            <option value="Amy@gmail.com" > Amy</option>
+            <option value="Emmy@gmail.com" > Emmy</option>
+            <option value="Bob@gmail.com"> Bob </option>
+            <option value="Albert@gmail.com" > Albert </option>
             </select>
-        </div>
-
-        <div class="field">
-            <label class="label" for="serviceDate">Date needed</label>
-            <input type="date" name="serviceDate" class="input" />
         </div>
 
         <button class="button" id="submitRequest">Send Letter</button>
@@ -55,21 +51,26 @@ mainContainer.addEventListener("click", clickEvent => {
         // Get what the user typed into the form fields
 
         const theSelectedIndex = document.getElementById("authorSelection").options.selectedIndex
-        const userauthorName = document.getElementById('authorSelection').options[theSelectedIndex].text
+        const userauthorpartName = document.getElementById('authorSelection').options[theSelectedIndex].text
+        const userauthorEmail = document.getElementById('authorSelection').options[theSelectedIndex].value
+        const userauthorName = userauthorpartName + ' (' + userauthorEmail + ")"
 
         const userLetter = document.querySelector("textarea[name='letter']").value
 
         const theSelectedIndex2 = document.getElementById("recipientSelection").options.selectedIndex
-        const userRecipient = document.getElementById('recipientSelection').options[theSelectedIndex2].text
+        const userRecipientpart = document.getElementById('recipientSelection').options[theSelectedIndex2].text
+        const userRecipientEmail = document.getElementById('recipientSelection').options[theSelectedIndex2].value
+        const userRecipient = userRecipientpart + ' (' + userRecipientEmail + ")"
 
-        const userTopic = document.querySelector('input[name="topic_input"]:checked').value;
+        const userTopic = document.querySelector('input[name="topic_input"]:checked').id;
 
-        const userDate = document.querySelector("input[name='serviceDate']").value
+        const today = new Date();
+        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const userDate = date + ' ' + time;
 
         // Make an object out of the user input
         const dataToSendToAPI = {
-            
-
             authorName: userauthorName,
             letter: userLetter,
             topic: userTopic,

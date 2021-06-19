@@ -4,10 +4,17 @@ header {
     align-items: center;
     padding: auto;
 }
-img{
-    width: 150px;;
+
+img {
+    width: 150px;
     height: 150px;
+    padding: 1rem;
 }
+
+.date {
+    font-size: 13px;
+}
+
 .field {
     display: flex;
     flex-direction: column;
@@ -17,6 +24,14 @@ img{
     /* border-radius: 0.5rem; */
     /* box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143); */
 }
+
+.field_topic {
+    display: flex;
+    flex-direction: row;
+    /* margin: 0 2rem; */
+    /* border: 1px dashed rgb(185, 179, 182); */
+}
+
 #submitRequest {
     /* margin: 1rem 0 2rem 2rem; */
     margin: 1rem 0 2rem 1rem;
@@ -26,8 +41,16 @@ img{
     font-size: 1rem;
 }
 
-.request__delete {  
+.topic {
+    border-radius: 25px;
+    background-color: rgb(245, 244, 185);
+    color: rgb(10, 10, 10);
+    border: 1px solid rgb(22, 22, 22);
+    margin: 0.5rem 0rem;
+    padding: 0.3rem;
+}
 
+.request__delete {
     background-color: rgb(177, 19, 19);
     color: lightgoldenrodyellow;
 }
@@ -42,10 +65,14 @@ li {
     border: 1px solid rgb(233, 227, 230);
     margin: 0rem 2rem 0rem -1.3rem;
     padding: 1rem 0rem;
-} 
-li:nth-child(even){
-    background-color:white;
-   }
-li:nth-child(odd){
-    background-color: lightgray;
-   }
+}
+
+li:nth-child(even) {
+    background-color: white;
+    padding: 1rem 1rem;
+}
+
+li:nth-child(odd) {
+    background-color: rgb(213 236 241);
+    padding: 1rem 1rem;
+}

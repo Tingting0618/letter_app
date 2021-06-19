@@ -6,19 +6,22 @@ export const Requests = () => {
 
     let html = "<ul>"
     // Use .map() for converting objects to <li> elements
-    const listItems =requests.map(request => {
+    const listItems = requests.map(request => {
         return `<li>
             <div name="request" value="${request.id}" /> 
                 <p>
                 Dear ${request.recipient}
                 <br>
+                <br>
                 ${request.letter}
+                <br>
                 <br>
                 Sincerely, ${request.authorName}
                 <br>
+                <div class = "date">
                 sent on ${request.date}
-                <br>
-                ${request.topic}
+                </div>
+                <button class="topic"> ${request.topic} </button>
                 </p>
                 
                 <button class="request__delete"
@@ -36,7 +39,7 @@ const mainContainer = document.querySelector("#container")
 
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("request--")) {
-        const [,requestId] = click.target.id.split("--")
+        const [, requestId] = click.target.id.split("--")
         deleteRequest(parseInt(requestId))
     }
 })

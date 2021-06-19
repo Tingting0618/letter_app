@@ -1,18 +1,20 @@
 {
   "requests": [
     {
-      "authorName": "Lynn",
-      "letter": "Hello World",
-      "topic": "Friendly",
-      "recipient": "Banjo",
-      "date": "2021-06-20",
-      "id": 1
-    }
-  ],
-  "monkey": [
+      "authorName": "Emmy (Emmy@gmail.com)",
+      "letter": "Hi there, this is a pen pal app for the book5 test.",
+      "topic": "Business",
+      "recipient": "Albert (Albert@gmail.com)",
+      "date": "2021-6-19 10:57:12",
+      "id": 3
+    },
     {
-      "name": "Fred",
-      "species": "Rat"
+      "authorName": "Amy (Amy@gmail.com)",
+      "letter": "Hi there, just add one more letter for the demo. Thank you!            ",
+      "topic": "Congratulations",
+      "recipient": "Emmy (Emmy@gmail.com)",
+      "date": "2021-6-19 10:57:44",
+      "id": 4
     }
   ]
 }
